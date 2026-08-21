@@ -1,5 +1,5 @@
 # ADSO 3410390
-![My picture](Imagen.jpeg)
+![My picture](SRC/IMAGENES/Imagen.jpeg)
 ## Santiago Gómez Arredondo
 ### Analisis y Desarrollo de Software
 ** Centro de Procesos Industriales y Construccion **

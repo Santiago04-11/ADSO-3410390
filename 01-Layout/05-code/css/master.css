@@ -1,0 +1,198 @@
+:root {
+    --color-negroPrincipal: #090909;
+    --color-grisOscuro: #141414;
+    --color-grisMedio: #434343;
+    --color-dorado: #c5a059;
+    --color-blanco: #ffffff;
+    --font-body: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-negroPrincipal);
+    color: var(--color-grisMedio);
+    font-family: var(--font-body);
+    margin: 0;
+}
+
+main {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--color-negroPrincipal);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    height: 30px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.options {
+    display: flex;
+    gap: 30px;
+}
+
+.options a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.options a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-dorado);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.options a:hover {
+    color: var(--color-blanco);
+    transform: translateY(-3px);
+}
+
+.options a:hover::after {
+    transform: scaleX(1);
+}
+
+.options a:first-child::after {
+    transform: scaleX(1);
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/fondo-latin-mafia.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.hero-title {
+    font-size: 80px;
+    line-height: 0.9;
+    color: var(--color-blanco);
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.hero-subtitle {
+    color: var(--color-dorado);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.hero-badge {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--color-dorado);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-badge:hover {
+    transform: scale(1.1) rotate(5deg);
+    background-color: rgba(197, 160, 89, 0.1);
+}
+
+.hero-badge span {
+    color: var(--color-blanco);
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.hero-description {
+    color: var(--color-blanco);
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 10px 0 20px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-dorado);
+    color: var(--color-negroPrincipal);
+    border-color: var(--color-dorado);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-dorado);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-blanco);
+    border-color: var(--color-blanco);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-blanco);
+    color: var(--color-negroPrincipal);
+    transform: scale(1.05);
+}

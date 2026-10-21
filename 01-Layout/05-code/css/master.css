@@ -1,330 +1,675 @@
 
 
-:root {
-    --color-negroPrincipal: #090909;
-    --color-grisOscuro: #141414;
-    --color-grisMedio: #434343;
-    --color-dorado: #c5a059;
-    --color-blanco: #ffffff;
+    :root {
+        --color-negroPrincipal: #090909;
+        --color-grisOscuro: #141414;
+        --color-grisMedio: #434343;
+        --color-dorado: #c5a059;
+        --color-blanco: #ffffff;
+        
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-negroPrincipal);
+        color: var(--color-grisMedio);
+        font-family: var(--font-body);
+        margin: 0;
+    }
+
+    main {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: var(--color-negroPrincipal);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        font-family: 'Inter', sans-serif;
+        
+    }
+
+    .logo {
+        height: 60px;      
+        width: 130px;       
+        display: block;  
+        transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.1); 
+    }
+
+    .options {
+        display: flex;
+        gap: 30px;
+    }
+
+    .options a {
+        color: var(--color-blanco);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 5px;
+        transition: color 0.3s ease, transform 0.3s ease;
+        font-weight: 900;
+    }
+
+    .options a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-dorado);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+    }
+
+    .options a:hover {
+        color: var(--color-blanco);
+        transform: translateY(-3px);
+    }
+
+    .options a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .options a:first-child::after {
+        transform: scaleX(1);
+    }
+
+    .hero {
+        background-image: url(../image/latinmafia.webp);
+        background-size: cover;       
+        background-position: center;  
+        background-repeat: no-repeat;  
+        min-height: 100vh;             
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        padding: 60px 20px;
+        border-color: 100px #272726;
+    }
+
+    .hero-content {
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-title {
+        font-size: 80px;
+        line-height: 0.9;
+        color: var(--color-blanco);
+        font-family: 'Monserrat', sans-serif;
+        font-weight: 900;
+        margin: 0;
+        letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+        color: var(--color-dorado);
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin: 0;
+        text-transform: uppercase;
+        font-family: 'Monserrat', sans-serif;
+    }
+
+    .hero-badge {
+        width: 100px;
+        height: 100px;
+        border: 2px solid var(--color-dorado);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        
+    }
+
+    .hero-badge:hover {
+        transform: scale(1.1) rotate(5deg);
+        background-color: rgba(197, 160, 89, 0.1);
+    }
+
+    .hero-badge span {
+        color: var(--color-blanco);
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 1;
+        text-transform: uppercase;
+        font-family: 'Monserrat', sans-serif;
+    }
+
+    .hero-description {
+        color: var(--color-blanco);
+        font-size: 16px;
+        line-height: 1.5;
+        max-width: 500px;
+        margin: 10px 0 20px 0;
+        font-family: 'Monserrat', sans-serif;
+        font-weight: 300; 
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 20px;
+        border-radius: 5px;
+        font-family: 'Monserrat', sans-serif;
+        font-weight: 500;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+        
+    }
+
+    .btn-primary {
+        background-color: var(--color-dorado);
+        color: var(--color-negroPrincipal);
+        border-color: var(--color-dorado);
+    }
+
+    .btn-primary:hover {
+        background-color: transparent;
+        color: var(--color-dorado);
+        transform: scale(1.05);
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: var(--color-blanco);
+        border-color: var(--color-blanco);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--color-blanco);
+        color: var(--color-negroPrincipal);
+        transform: scale(1.05);
+    }
+
+
+    .musica {
+        background-color: var(--color-negroPrincipal);
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .musica-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .musica-title {
+        color: var(--color-blanco);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+        letter-spacing: 1px;
+        font-family: 'Monserrat', sans-serif;
+    }
+
+    .musica-subtitle {
+        color: var(--color-dorado);
+        margin: 0;
+        font-family: 'Monserrat', sans-serif;
+        font-weight: 600; 
+    }
+
+
+    .musica-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+        gap: 90px;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+
+    .album-card {
+        background-color: var(--color-grisOscuro);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #222; 
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+    }
+
+
+    .album-img-container {
+        width: 100%;
+        aspect-ratio: 1 / 1; 
+        overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+    }
+
+
+    .album-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .album-card:hover .album-img {
+        transform: scale(1.05); 
+    }
+
+
+    .album-info {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex-grow: 1; 
+        justify-content: space-between;
+    }
+
+    .album-name {
+        color: var(--color-blanco);
+        font-size: 13px;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    .album-year {
+        color: var(--color-grisMedio);
+        font-size: 11px;
+        margin: 0 0 15px 0;
+        text-transform: uppercase;
+    }
+
+
+    .btn-small {
+        padding: 6px 20px;
+        width: 80%;
+        text-align: center;
+        color: #c5a059;
+        border-color: #c5a059;
+        border-radius: 5px;
+        
+        font-family: 'Monserrat', sans-serif;
+        font-weight: 600;
+    }
+
+    .btn-small:hover {
+        background-color: var(--color-dorado);
+    }
+
+    .separador-fade {
+        width: 100%;
+        max-width: 1200px; /* Para que no toque los bordes en pantallas gigantes */
+        height: 1px; /* Grosor de la línea */
+        background: linear-gradient(90deg, transparent, #333333, transparent);
+        margin: 0 auto; /* Lo centra */
+    }
+
+    /* --- SECCIÓN TOUR --- */
+    .tour {
+        background-color: var(--color-negroPrincipal);
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tour-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .tour-title {
+        color: var(--color-blanco);
+        font-family: 'Monserrat', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+        letter-spacing: 1px;
+    }
+
+    .tour-subtitle {
+        color: var(--color-dorado);
+        font-family: 'Monserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+
+    .tour-content {
+        display: flex;
+        gap: 90px;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+
+    .tour-map {
+        flex: 1.5; 
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+    }
+
+
+
+
+    .tour-list {
+        flex: 1.5; 
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .show-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #111; /* Fondo oscuro para cada fila */
+        padding: 15px 25px;
+        border: 1px solid #222;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+
+    .show-item:hover {
+        background-color: #1a1a1a;
+        border-color: var(--color-dorado);
+    }
+
+    .show-date {
+        color: var(--color-blanco);
+        font-family: var(--font-titles);
+        font-weight: 700;
+        font-size: 14px;
+        width: 80px; 
+        font-family: 'Monserrat', sans-serif;
+    }
+
+    .show-city {
+        color: var(--color-blanco);
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        flex: 1; 
+        padding-left: 20px;
+        font-family: 'Monserrat', sans-serif;
+    }
+
+    .show-venue {
+        color: #888; 
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: right;
+        font-family: 'Monserrat', sans-serif;
+        font-size: 14px;
+    }
+
+
+    .btn-full {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        padding: 15px;
+        box-sizing: border-box; 
+        font-family: 'Monserrat', sans-serif;
+        font-size: 14px;
+        border-color: #c5a059;
+        color: #c5a059;
+    }
+
+    .btn-full:hover {
+        background-color: var(--color-dorado);
+    }
+
+
+
+    .media {
+        background-color: var(--color-negroPrincipal);
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .media-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .media-title {
+        color: var(--color-blanco);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+        letter-spacing: 1px;
+        font-family: 'Monserrat', sans-serif;
+    }
+
+    .media-subtitle {
+        color: var(--color-dorado);
+        margin: 0;
+        font-family: 'Monserrat', sans-serif;
+        font-weight: 600; 
+    }
+
+
+    .media-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 4 columnas iguales */
+        gap: 90px;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+
+    .album-video {
+        background-color: var(--color-grisOscuro);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #222; 
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+    }
+
+
+    .album-video-container {
+        width: 100%;
+        aspect-ratio: 1 / 1; 
+        overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+    }
+
+
+    .album-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .album-video:hover .foto-video {
+        transform: scale(1.05); 
+    }
+
+
+    .video-info {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex-grow: 1; 
+        justify-content: space-between;
+    }
+
+    .video-name {
+        color: var(--color-blanco);
+        font-size: 17px;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    .video-year {
+        color: var(--color-grisMedio);
+        font-size: 15px;
+        margin: 0 0 15px 0;
+        text-transform: uppercase;
+    }
+
+
+    .boton {
+        padding: 6px 20px;
+        width: 80%;
+        text-align: center;
+        color: #c5a059;
+        border-color: #c5a059;
+        border-radius: 5px;
+        font-family: 'Monserrat', sans-serif;
+        font-weight: 600;
+        
+    }
+
+    .boton:hover {
+        background-color: var(--color-dorado);
+        color: var(--color-negroPrincipal);
+    }
+
+
+    /* --- FOOTER --- */
+    .footer {
+        background-color: #0c0c0c; /* Un tono un poquito más claro que el negro puro para diferenciar */
+        padding: 60px 20px 30px 20px;
+        font-family: var(--font-body, 'Inter', sans-serif);
+        border-top: 1px solid #222; /* La línea sutil que separa del contenido de arriba */
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* 👈 Apila los elementos verticalmente */
+        align-items: center;    /* 👈 Centra todo horizontalmente */
+        gap: 25px;              /* Espacio entre el logo, iconos, menú y texto */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* 1. Logo */
+    .footer-logo {
+        height: 50px; /* Ajusta el tamaño a tu gusto */
+        width: auto;
+    }
+
+    .footer-logo:hover {
+        transform: scale(1.1); 
+    }
+
+    /* 2. Redes Sociales */
+    .footer-social {
+        display: flex;
+        gap: 20px; /* Separación entre cada icono */
+    }
+
+    .social-icon {
+    display: inline-block;
+    width: 24px;  /* Tamaño del icono */
+    height: 24px;
     
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--color-negroPrincipal);
-    color: var(--color-grisMedio);
-    font-family: var(--font-body);
-    margin: 0;
-}
-
-main {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: var(--color-negroPrincipal);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    font-family: 'Inter', sans-serif;
+    /* 👇 Aquí le damos el color dorado de tu paleta */
+    background-color: var(--color-dorado); 
     
-}
-
-.logo {
-    height: 30px;
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.1);
-}
-
-.options {
-    display: flex;
-    gap: 30px;
-}
-
-.options a {
-    color: var(--color-blanco);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-weight: 900;
-}
-
-.options a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-dorado);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease;
-}
-
-.options a:hover {
-    color: var(--color-blanco);
-    transform: translateY(-3px);
-}
-
-.options a:hover::after {
-    transform: scaleX(1);
-}
-
-.options a:first-child::after {
-    transform: scaleX(1);
-}
-
-.hero {
-    background-image: url(../image/latinmafia.webp);
-    background-size: cover;       
-    background-position: center;  
-    background-repeat: no-repeat;  
-    min-height: 100vh;             
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    padding: 60px 20px;
-    border-color: 100px #272726;
-}
-
-.hero-content {
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.hero-title {
-    font-size: 80px;
-    line-height: 0.9;
-    color: var(--color-blanco);
-    font-family: 'Monserrat', sans-serif;
-    font-weight: 900;
-    margin: 0;
-    letter-spacing: -2px;
-}
-
-.hero-subtitle {
-    color: var(--color-dorado);
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin: 0;
-    text-transform: uppercase;
-    font-family: 'Monserrat', sans-serif;
-}
-
-.hero-badge {
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--color-dorado);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* 👇 Propiedades para que la máscara encaje perfecto */
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
     
+    opacity: 0.7; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.hero-badge:hover {
-    transform: scale(1.1) rotate(5deg);
-    background-color: rgba(197, 160, 89, 0.1);
+.footer-social a:hover .social-icon {
+    opacity: 1; 
+    transform: translateY(-3px); 
 }
 
-.hero-badge span {
-    color: var(--color-blanco);
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 1;
-    text-transform: uppercase;
-    font-family: 'Monserrat', sans-serif;
-}
+    .footer-social a:hover .social-icon {
+        opacity: 1; /* Se iluminan al pasar el mouse */
+        transform: translateY(-3px); /* Pequeño salto */
+    }
 
-.hero-description {
-    color: var(--color-blanco);
-    font-size: 16px;
-    line-height: 1.5;
-    max-width: 500px;
-    margin: 10px 0 20px 0;
-    font-family: 'Monserrat', sans-serif;
-    font-weight: 300; 
-}
+    /* 3. Menú */
+    .footer-links {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap; /* Por si la pantalla es pequeña */
+        justify-content: center;
+    }
 
-.hero-buttons {
-    display: flex;
-    gap: 20px;
-    border-radius: 5px;
-    font-family: 'Monserrat', sans-serif;
-    font-weight: 500;
-}
+    .footer-links a {
+        color: #a0a0a0; /* Gris claro */
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+    }
 
-.btn {
-    padding: 12px 30px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-    
-}
+    .footer-links a:hover {
+        color: var(--color-blanco); /* Se ponen blancos al pasar el mouse */
+    }
 
-.btn-primary {
-    background-color: var(--color-dorado);
-    color: var(--color-negroPrincipal);
-    border-color: var(--color-dorado);
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--color-dorado);
-    transform: scale(1.05);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--color-blanco);
-    border-color: var(--color-blanco);
-}
-
-.btn-secondary:hover {
-    background-color: var(--color-blanco);
-    color: var(--color-negroPrincipal);
-    transform: scale(1.05);
-}
+    /* 4. Copyright */
+    .footer-bottom p {
+        color: #666;
+        font-size: 12px;
+        margin: 0;
+    }
 
 
-.musica {
-    background-color: var(--color-negroPrincipal);
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.musica-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.musica-title {
-    color: var(--color-blanco);
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 0 0 10px 0;
-    letter-spacing: 1px;
-    font-family: 'Monserrat', sans-serif;
-}
-
-.musica-subtitle {
-    color: var(--color-dorado);
-    margin: 0;
-    font-family: 'Monserrat', sans-serif;
-    font-weight: 600; 
-}
-
-
-.musica-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
-    gap: 90px;
-    max-width: 1200px;
-    width: 100%;
-}
-
-
-.album-card {
-    background-color: var(--color-grisOscuro);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #222; 
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-}
-
-
-.album-img-container {
-    width: 100%;
-    aspect-ratio: 1 / 1; 
-    overflow: hidden;
-    position: relative;
-    border-radius: 8px;
-}
-
-
-.album-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.album-card:hover .album-img {
-    transform: scale(1.05); 
-}
-
-
-.album-info {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex-grow: 1; 
-    justify-content: space-between;
-}
-
-.album-name {
-    color: var(--color-blanco);
-    font-size: 13px;
-    font-weight: 700;
-    margin: 0 0 5px 0;
-    text-transform: uppercase;
-    line-height: 1.2;
-}
-
-.album-year {
-    color: var(--color-grisMedio);
-    font-size: 11px;
-    margin: 0 0 15px 0;
-    text-transform: uppercase;
-}
-
-
-.btn-small {
-    padding: 6px 20px;
-    font-size: 11px;
-    width: 80%;
-    text-align: center;
-    color: #c5a059;
-    border-color: #c5a059;
-    border-radius: 5px;
-    
-}
-
-.btn-small:hover {
-    background-color: var(--color-dorado);
-}

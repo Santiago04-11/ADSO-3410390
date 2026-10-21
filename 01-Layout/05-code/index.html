@@ -6,12 +6,12 @@
     <title>Latin Mafia</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/master.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
         <header>
-            <!-- Asumo que tu logo.svg ya tiene el texto "LATIN MAFIA" o lo pondremos con CSS -->
-            <img class="logo" src="images/logo.svg" alt="Logo">
             <nav class="options">
                 <a href="#inicio">Inicio</a>
                 <a href="#musica">Música</a>
@@ -21,8 +21,9 @@
             </nav>
         </header>
 
-        <!-- SECCIÓN INICIO / HERO -->
+        <!-- SECCIÓN INICIO -->
         <section id="inicio" class="hero">
+            
             <div class="hero-content">
                 <h1 class="hero-title">
                     LATIN<br>MAFIA
@@ -43,6 +44,64 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECCIÓN MÚSICA -->
+<section id="musica" class="musica">
+    <div class="musica-header">
+        <h1 class="musica-title">MÚSICA DESTACADA</h1>
+        <h3 class="musica-subtitle">Escucha lo más reciente</h3>
+    </div>
+
+    <div class="musica-grid">
+        
+        <article class="album-card">
+            <div class="album-img-container">
+                <img src="image/TodoElDia.png" alt="Todos los días todo el día" class="album-img">
+            </div>
+            <div class="album-info">
+                <h3 class="album-name">TODOS LOS DÍAS TODO EL DÍA</h3>
+                <p class="album-year">ÁLBUM • 2024</p>
+                <a href="#" class="btn btn-secondary btn-small">ESCUCHAR</a>
+            </div>
+        </article>
+
+        
+        <article class="album-card">
+            <div class="album-img-container">
+                <img src="image/Julietota.png" alt="Julietota" class="album-img">
+            </div>
+            <div class="album-info">
+                <h3 class="album-name">JULIETOTA</h3>
+                <p class="album-year">ÁLBUM • 2023</p>
+                <a href="#" class="btn btn-secondary btn-small">ESCUCHAR</a>
+            </div>
+        </article>
+
+        
+        <article class="album-card">
+            <div class="album-img-container">
+                <img src="image/9months.png" alt="9 months & 50 hours" class="album-img">
+            </div>
+            <div class="album-info">
+                <h3 class="album-name">9 months & 50 hours</h3>
+                <p class="album-year">ÁLBUM • 2026</p>
+                <a href="#" class="btn btn-secondary btn-small">ESCUCHAR</a>
+            </div>
+        </article>
+
+    
+        <article class="album-card">
+            <div class="album-img-container">
+                <img src="image/NoDigasNada.png" alt="No digas nada" class="album-img">
+            </div>
+            <div class="album-info">
+                <h3 class="album-name">NO DIGAS NADA</h3>
+                <p class="album-year">ÁLBUM • 2023</p>
+                <a href="#" class="btn btn-secondary btn-small">ESCUCHAR</a>
+            </div>
+        </article>
+    </div>
+</section>
     </main>
 
     <script src="js/app.js"></script>
